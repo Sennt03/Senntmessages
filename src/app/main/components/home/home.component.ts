@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  pathImages = environment.pathImages
   constructor() { }
 
   ngOnInit(): void {

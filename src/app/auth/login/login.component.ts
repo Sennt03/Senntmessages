@@ -14,7 +14,6 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  pathImages = environment.pathImages
   form: FormGroup
 
   constructor(

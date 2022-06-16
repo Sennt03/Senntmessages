@@ -15,7 +15,6 @@ import { environment } from 'src/environments/environment';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
-  pathImages = environment.pathImages
   form: FormGroup
 
   constructor(
