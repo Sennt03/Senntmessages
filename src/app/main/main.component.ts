@@ -21,6 +21,7 @@ import { ChatService } from '@services/chat.service';
 })
 export class MainComponent implements OnInit, OnDestroy {
 
+  pathImages = environment.pathImages
   eventUpdateChats = new Subject<any>();
   subUrl: Subscription
   user: LsUser

@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { alertHandleErr, sendAlert } from '@shared/utils/alerts';
 import { Router } from '@angular/router';
 import { LsEventOpenAlert } from 'src/app/core/models/alerts.models';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,7 @@ import { LsEventOpenAlert } from 'src/app/core/models/alerts.models';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
+  pathImages = environment.pathImages
   form: FormGroup
 
   constructor(

@@ -5,6 +5,7 @@ import { LsEventOpenAlert } from '@models/alerts.models';
 import { AuthService } from '@services/auth.service';
 import { alertHandleErr, sendAlert } from '@shared/utils/alerts';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { Subject } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  pathImages = environment.pathImages
   form: FormGroup
 
   constructor(
