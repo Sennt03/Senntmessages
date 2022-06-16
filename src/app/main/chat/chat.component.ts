@@ -56,7 +56,7 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.storeSuscription.unsubscribe()
-    if(this.observeFinalSub) this.observeFinalSub.unobserve(this.divFinal)
+    // if(this.observeFinalSub) this.observeFinalSub.unobserve(this.divFinal)
     this.subReadMessages.unsubscribe()
     this.subListeMessages.unsubscribe()
   }
