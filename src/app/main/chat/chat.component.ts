@@ -208,4 +208,8 @@ export class ChatComponent implements OnInit, OnDestroy {
     sendAlert(this.eventOpenAlert, e)
   }
 
+  viewPhoto(image_class: string){
+    document.querySelector('.'+image_class).classList.toggle('active')
+  }
+
 }

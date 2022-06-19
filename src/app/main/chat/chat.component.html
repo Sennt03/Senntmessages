@@ -3,7 +3,9 @@
     <header class="header">
         <div class="me">
             <mat-icon class="back" routerLink="/">arrow_back</mat-icon>
-            <img [src]="chatUser?.image.url || imgDefault" alt="Foto de perfil de (usuario)">
+            <div class="image_modal image_profile_user" (click)="viewPhoto('image_profile_user')">
+              <img [src]="chatUser?.image.url || imgDefault" alt="Foto de perfil de (usuario)">
+            </div>
             <p>{{ chatUser?.name || '...' }}</p>
         </div>
         <div class="icons">
@@ -49,8 +51,11 @@
         'message__init': isInit(message),
         'final_message': final
       }" [id]="message._id">
-        <img [src]="message.image.url" alt="Imagen" *ngIf="message.image">
-        <p class="text-message" *ngIf="message.message.trim().length > 0">{{ message.message }}</p>
+      <div class="image_modal image_{{message.image.public_id}}" (click)="viewPhoto('image_'+message.image.public_id)" *ngIf="message.image">
+        <img [src]="message.image.url" alt="Imagen">
+      </div>
+        <p appMessage class="text-message" *ngIf="message.message.trim().length > 0">{{ message.message }}</p>
+        <!-- .innerHTML.split('\n').length > 1 -->
         <div class="info" [ngClass]="{'img': message.message.trim().length < 1 && message.image}">
           <p>{{ message.createdAt | createHour }}</p>
           <mat-icon class="icon-done" *ngIf="message.from == user._id"

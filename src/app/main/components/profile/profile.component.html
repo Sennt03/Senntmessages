@@ -5,13 +5,14 @@
     </div>
     <div class="main">
         <div class="image animate__animated animate__zoomIn animate__faster animate__delay-2s">
-            <img [src]="user.image.url" [alt]="user.name"
-            >
+            <div class="image_modal">
+                <img [src]="user.image.url" [alt]="user.name">
+            </div>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu to open options to image">
                 <mat-icon>linked_camera</mat-icon>
             </button>
             <mat-menu #menu="matMenu" yPosition="above">
-                <button mat-menu-item><span>View photo</span></button>
+                <button mat-menu-item (click)="viewPhoto(user.image.url)"><span>View photo</span></button>
                 <button mat-menu-item (click)="uploadPhoto(file)"><span>Upload photo</span></button>
                 <button mat-menu-item (click)="removePhoto()"><span>Remove photo</span></button>
             </mat-menu>

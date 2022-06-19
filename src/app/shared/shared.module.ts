@@ -4,6 +4,7 @@ import { MiniAlertComponent } from './components/mini-alert/mini-alert.component
 import { MaterialModule } from '@material/material.module';
 import { CreateDatePipe } from './pipes/create-date.pipe';
 import { CreateHourPipe } from './pipes/create-hour.pipe';
+import { MessageDirective } from './directives/message.directive';
 
 
 
@@ -11,7 +12,8 @@ import { CreateHourPipe } from './pipes/create-hour.pipe';
   declarations: [
     MiniAlertComponent,
     CreateDatePipe,
-    CreateHourPipe
+    CreateHourPipe,
+    MessageDirective
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { CreateHourPipe } from './pipes/create-hour.pipe';
   exports: [
     MiniAlertComponent,
     CreateDatePipe,
-    CreateHourPipe
+    CreateHourPipe,
+    MessageDirective
   ]
 })
 export class SharedModule { }

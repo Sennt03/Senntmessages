@@ -90,9 +90,9 @@ export class ProfileComponent implements OnInit {
     const inputValue = this[inputName].value
     if(this[inputName].valid){
       if(inputValue != this.user[inputName]){
+        this.toggleEdit(input, true, inputValue)
         this.userService.updateProfile(inputName, inputValue).subscribe(res => {
           this.saveUserUpdated(res)
-          this.toggleEdit(input, true, inputValue)
         })
       }else{
         this.toggleEdit(input, true)
@@ -164,6 +164,10 @@ export class ProfileComponent implements OnInit {
   }
 
   // CHANGE PHOTO
+  viewPhoto(url: string){
+    window.open(url)
+  }
+
   removePhoto(){
     if(!this.user.image.default || this.user.image.default != 'true'){
       sendAlert(this.eventOpenAlert, 'Removing profile picture...')
